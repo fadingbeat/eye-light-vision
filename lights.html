@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>ZIM - Code Creativity</title>
+
+  <!-- zimjs.com - JavaScript Canvas Framework -->
+  <script src="https://zimjs.org/cdn/1.3.3/createjs.js"></script>
+  <script src="https://zimjs.org/cdn/cat/04/zim.js"></script>
+  <!-- use zimjs.com/distill to minify only code needed for app -->
+
+  <script>
+
+    const frame = new Frame("fit", 1024, 768, light, dark);
+    frame.on("ready", () => {
+      const stage = frame.stage;
+      let stageW = frame.width;
+      let stageH = frame.height;
+
+      // put your code here
+      var circle = new Circle(50, red)
+      let position = circle.pos(circle.width / 2, stageH / 2)
+      let regX = circle.width / 2
+      let regY = circle.height / 2
+
+      circle.reg(regX, regY)
+
+      // circle.outline()
+
+      let blob_path = new Blob({
+        color: "rgba(0,0,0,0)",
+        controlType: "none",
+        showControls: false,
+        lockControlType: true,
+        // borderColor: 1,
+        points:
+          [[450, -250, 10, 0, 0, 0, 0, 0, "none"],
+          [-500, -250, 10, 0, 0, 0, 0, 0, "none"],
+          [450, 250, 0, 10, 0, 0, 0, 0, "none"],
+          [-500, 250, 0, 10, 0, 0, 0, 0, "none"]]
+      }).center();
+
+      circle.animate({ path: blob_path, loop: true, ease: "sine" }, 20);
+
+      stage.update(); // needed to view changes
+    });
+
+  </script>
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+
+<body></body>
+
+</html>
