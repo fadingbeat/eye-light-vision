@@ -29,7 +29,6 @@
         controlType: "none",
         showControls: false,
         lockControlType: true,
-        // borderColor: 1,
         points:
           [[450, -250, 10, 0, 0, 0, 0, 0, "none"],
           [-500, -250, 10, 0, 0, 0, 0, 0, "none"],
@@ -37,11 +36,11 @@
           [-500, 250, 0, 10, 0, 0, 0, 0, "none"]]
       }).center();
 
-      circle.animate({ props: { path: blob_path }, time: 20, loop: true, loopCount: 2, ease: "back", rewind: true, call: done });
+      circle.animate({ props: { path: blob_path }, time: 20, loop: true, loopCount: 1, ease: "back", rewind: true, call: done });
 
       function done(target) {
         target.color = "blue";
-        target.animate({ props: { path: blob_path }, time: 8, loop: true, loopCount: 2, rewind: true, call: stopFirstAnimation });
+        target.animate({ props: { path: blob_path }, time: 8, loop: true, loopCount: 1, rewind: true, call: stopFirstAnimation });
       };
       function stopFirstAnimation(target) {
         target.alpha = 0;
