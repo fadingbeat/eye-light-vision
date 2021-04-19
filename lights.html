@@ -17,22 +17,18 @@
       let stageW = frame.width;
       let stageH = frame.height;
 
-      // put your code here
-      var circle = new Circle(50, red)
+      let circle = new Circle(50, red)
       let position = circle.pos(circle.width / 2, stageH / 2)
       let regX = circle.width / 2
       let regY = circle.height / 2
 
       circle.reg(regX, regY)
 
-      // circle.outline()
-
       let blob_path = new Blob({
         color: "rgba(0,0,0,0)",
         controlType: "none",
         showControls: false,
         lockControlType: true,
-        // borderColor: 1,
         points:
           [[450, -250, 10, 0, 0, 0, 0, 0, "none"],
           [-500, -250, 10, 0, 0, 0, 0, 0, "none"],
@@ -40,7 +36,15 @@
           [-500, 250, 0, 10, 0, 0, 0, 0, "none"]]
       }).center();
 
-      circle.animate({ path: blob_path, loop: true, ease: "sine" }, 20);
+      circle.animate({ props: { path: blob_path }, time: 20, loop: true, loopCount: 1, ease: "back", rewind: true, call: done });
+
+      function done(target) {
+        target.color = "blue";
+        target.animate({ props: { path: blob_path }, time: 8, loop: true, loopCount: 1, rewind: true, call: stopFirstAnimation });
+      };
+      function stopFirstAnimation(target) {
+        target.alpha = 0;
+      }
 
       stage.update(); // needed to view changes
     });
