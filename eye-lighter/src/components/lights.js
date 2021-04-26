@@ -1,11 +1,10 @@
-const frame = new Frame("fit", 1024, 768, light, dark);
-frame.on("ready", () => {
-    const stage = frame.stage;
-    let stageW = frame.width;
-    let stageH = frame.height;
+const frame_lights = new window.Frame("fit", 1024, 768, window.light, window.dark);
+frame_lights.on("ready", () => {
+    const stage = frame_lights.stage;
+    let stageH = frame_lights.height;
 
-    let circle = new Circle(50, red)
-    let position = circle.pos(circle.width / 2, stageH / 2)
+    let circle = new window.Circle(50, window.red)
+    circle.pos(circle.width / 2, stageH / 2)
     let regX = circle.width / 2
     let regY = circle.height / 2
 
@@ -33,5 +32,7 @@ frame.on("ready", () => {
         target.alpha = 0;
     }
 
-    stage.update(); // needed to view changes
+    stage.update();
 });
+
+export default frame_lights;

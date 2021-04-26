@@ -1,17 +1,7 @@
-let scaling = "fit";
-let width = 1024;
-let height = 768;
-let color = "#85d48b";
-let outerColor = dark;
-
-var frame = new Frame(scaling, width, height, color, outerColor);
+var frame = new window.Frame("fit", 1024, 768, "#85d48b", window.dark);
 frame.on("ready", () => {
-    zog("ready from ZIM Frame");
 
     const stage = frame.stage;
-    let stageW = frame.width;
-    let stageH = frame.height;
-
     let targetBlob = new Blob({ points: "rectangle" });
     let blob = new Blob({ radius: 370, points: "circle", interactive: false, color: "#214d24" })
         .pos(200, 200)
@@ -28,9 +18,9 @@ frame.on("ready", () => {
 
     function burstBubbles() {
         blob.sca(0)
-        let particles = new Emitter({
-            obj: [new Rectangle(12, 12, "#214d24"),
-            new Circle(14, "#214d24")
+        new window.Emitter({
+            obj: [new window.Rectangle(12, 12, "#214d24"),
+            new window.Circle(14, "#214d24")
             ],
             num: 2,
             life: 4,
@@ -45,3 +35,5 @@ frame.on("ready", () => {
     stage.update();
 
 });
+
+export default frame;
