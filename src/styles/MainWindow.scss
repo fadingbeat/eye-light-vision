@@ -1,0 +1,14 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 1024px;
+  height: 768px;
+  margin: 0 auto;
+
+  .btn-wrapper {
+    margin: 20px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
