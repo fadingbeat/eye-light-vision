@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import cover from "../images/cover.webp";
 import "../styles/MainWindow.scss";
 import { Button } from "@progress/kendo-react-buttons";
+// import Exercises from "./Exercises";
 
 class MainWindow extends Component {
   render() {
