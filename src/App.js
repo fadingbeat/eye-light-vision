@@ -3,7 +3,6 @@ import './App.scss';
 import React from 'react';
 import MainWindow from "./components/MainWindow";
 import Exercises from './components/Exercises';
-import RenderSurface from './components/RenderSurface';
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
       <h1>Improve your eyesight and your vision!</h1>
       <MainWindow />
       <Exercises />
-      <RenderSurface/>
     </div>
   );
 }
