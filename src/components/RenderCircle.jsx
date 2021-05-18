@@ -32,11 +32,14 @@ class RenderCircle extends React.Component {
 
     onTimeout = () => {
       let x;
-      window.setInterval(() => {
-        this.surfaceRef.current.style.border = "4px solid purple";
+      let timesRun = 0;
+      let interval = setInterval(() => {
         let myDirection = ['left', 'right']
+        timesRun += 1;
         for (x of myDirection) {
-          console.log(x);
+          if(timesRun === 60){
+            clearInterval(interval);
+        }
           let direction = x;
           this.setState({
             show: !this.state.show,
@@ -58,9 +61,9 @@ class RenderCircle extends React.Component {
         const children = show ? (<div id="surface" ref={this.surfaceRef}/>) : null;
         return (
           <div>
-            <dt>
+            {/* <dt>
               Slide: {direction}
-            </dt>
+            </dt> */}
             <dt>
               <button 
                 onClick={this.onClick}>Animate
