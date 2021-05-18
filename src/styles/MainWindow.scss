@@ -1,14 +1,26 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  width: 1024px;
-  height: 768px;
   margin: 0 auto;
-
+  img {
+    display: flex;
+    margin: 0 auto;
+    max-width: 100%;
+  }
   .btn-wrapper {
-    margin: 20px 0;
+    margin: 20px 13%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    Button {
+      width: 100px;
+      height: 50px;
+    }
+  }
+  .k-window-actions {
+    display: none;
+  }
+  .k-button-icon.k-button.k-flat {
+    display: none;
   }
 }
