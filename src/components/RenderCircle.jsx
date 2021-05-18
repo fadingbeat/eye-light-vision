@@ -1,13 +1,14 @@
-import * as React from 'react';
+import  React, { createRef } from 'react';
 import { Surface } from '@progress/kendo-drawing';
 
 import {  Slide } from '@progress/kendo-react-animation';
 import drawCircle from './draw-circle';
 
 class RenderCircle extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = { show: true, direction: "left" };
+    constructor(props) {
+      super(props);
+      this.state = { show: true, direction: "left"};
+      this.surfaceRef = createRef()
     }
 
     surface;
@@ -16,57 +17,57 @@ class RenderCircle extends React.Component {
       this.setState({
         show: !this.state.show,
       });
+      this.onTimeout();
+    }
+  
+    componentDidUpdate() {
+      drawCircle(this.createSurface());
     }
 
     createSurface = () => {
-        const element = document.querySelector("#surface");
-        this.surface = Surface.create(element);
-        return this.surface;
+      const element = document.querySelector("#surface");
+      this.surface = Surface.create(element);
+      return this.surface;
     }
 
-    reachedEnd = () => {
-      let dialogW = document.querySelector(".k-content.k-window-content").clientWidth-400;
-      let circleX = document.querySelector("#surface circle").getBoundingClientRect().x;
-      if (circleX === dialogW) {
-        this.setState({direction: "down"})
-      }
+    onTimeout = () => {
+      let x;
+      window.setInterval(() => {
+        this.surfaceRef.current.style.border = "4px solid purple";
+        let myDirection = ['left', 'right']
+        for (x of myDirection) {
+          console.log(x);
+          let direction = x;
+          this.setState({
+            show: !this.state.show,
+            direction: direction,
+          });
+          break;
+        }
+      }, 15000);
     }
+
     onClick = () => {
       this.setState({
-          show: !this.state.show,
+        show: !this.state.show,
       });
     }
 
-    onChange = (e) => {
-      this.setState({
-        show: true,
-        direction: e.target.value
-      })
-  }
-
     render() {
         const { show, direction } = this.state;
-        const children = show ? (<div id="surface" />) : null;
+        const children = show ? (<div id="surface" ref={this.surfaceRef}/>) : null;
         return (
           <div>
             <dt>
               Slide: {direction}
             </dt>
             <dt>
-              <button onClick={this.onClick}>Animate</button>
-              <button name="direction" value="up" defaultValue={direction === "up"}
-                onClick={this.onChange}>Top
+              <button 
+                onClick={this.onClick}>Animate
               </button>
-              <button name="direction" value="down" defaultValue={direction === "down"}
-                onClick={this.onChange}>Down
-              </button>
-              <button name="direction" value="right" defaultValue={direction === "right"}
-                onClick={this.onChange}>Right
-              </button>
-
             </dt>
-            <Slide direction={direction} transitionEnterDuration={500}
-              transitionExitDuration={10000}>
+            <Slide  direction={direction} transitionEnterDuration={17000}
+              transitionExitDuration={20000}>
               {children}
             </Slide>
           </div>
