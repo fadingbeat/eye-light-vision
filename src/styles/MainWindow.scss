@@ -17,10 +17,38 @@
       height: 50px;
     }
   }
-  .k-window-actions {
-    display: none;
+  .k-widget.k-window {
+    .k-content.k-window-content {
+      div {
+        .k-animation-container.k-animation-container-relative {
+          width: 100% !important;
+          height: 100% !important;
+          .k-child-animation-container {
+            width: inherit !important;
+            height: inherit !important;
+            #surface {
+              height: inherit;
+            }
+          }
+        }
+      }
+    }
   }
-  .k-button-icon.k-button.k-flat {
-    display: none;
-  }
+}
+
+/*Usage of child combinators to select specific elements in the DOM tree that should not be displayed (excluding child component)*/
+.main-container
+  > .k-widget.k-window
+  > .k-window-titlebar.k-dialog-titlebar
+  :nth-child(2),
+.main-container
+  > .k-widget.k-window
+  > .k-window-titlebar.k-dialog-titlebar
+  :nth-child(3),
+.main-exercise
+  > .k-widget.k-window
+  > .k-window-titlebar.k-dialog-titlebar
+  > .k-window-actions
+  :only-child {
+  display: none;
 }

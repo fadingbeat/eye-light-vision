@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Window } from '@progress/kendo-react-dialogs';
 import RenderCircle from './RenderCircle';
+import "../styles/MainExercise.scss";
 
 class Exercises extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class Exercises extends Component {
 
   render() {
     return (
-      <div>
+      <div className="main-exercise">
         <button className="k-button" onClick={this.toggleDialog}>Follow the Light</button>
         {this.state.visible && 
         <Window title={"Lights - Trace the red circle with your eyes."} 

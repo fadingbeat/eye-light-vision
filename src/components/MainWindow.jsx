@@ -3,7 +3,7 @@ import cover from "../images/cover.webp";
 import "../styles/MainWindow.scss";
 import { Button } from "@progress/kendo-react-buttons";
 import { Window } from "@progress/kendo-react-dialogs";
-// import Exercises from "./Exercises";
+import Exercises from "./Exercises";
 
 class MainWindow extends Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class MainWindow extends Component {
         windowStage: "FULLSCREEN"
     };
   }
+
   render() {
     return (
       <div className="main-container">
@@ -29,8 +30,10 @@ class MainWindow extends Component {
               <Button primary={true}>Settings</Button>
               <Button primary={true}>Help</Button>
             </div>
+            <Exercises/>
           </Window>
         }
+        
       </div>
     );
   }
