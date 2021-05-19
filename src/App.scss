@@ -3,3 +3,22 @@
     text-align: center;
   }
 }
+
+.k-widget.k-window {
+  .k-content.k-window-content {
+    div {
+      height: 100% !important;
+      .k-animation-container.k-animation-container-relative {
+        width: 100% !important;
+        height: 100% !important;
+        .k-child-animation-container {
+          width: inherit !important;
+          height: inherit !important;
+          #surface {
+            height: inherit;
+          }
+        }
+      }
+    }
+  }
+}
