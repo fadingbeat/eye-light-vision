@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { Button } from "@progress/kendo-react-buttons";
 import { Window } from '@progress/kendo-react-dialogs';
-import RenderCircle from './RenderCircle';
 import "../styles/MainExercise.scss";
+import {ZimFrame} from '../components/zim/greenRender';
 
-class Exercises extends Component {
+class Green extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,6 +12,7 @@ class Exercises extends Component {
         isResizable: false,
         windowStage: "FULLSCREEN"
     };
+   
   }
 
   toggleDialog = () => {
@@ -27,23 +29,19 @@ class Exercises extends Component {
 
   render() {
     return (
-      <div className="main-exercise">
-        <button className="k-button" onClick={this.toggleDialog}>Follow the Light</button>
+      <div className="second-exercise">
+        <Button primary={true} onClick={this.toggleDialog}>Exercise green</Button>
         {this.state.visible && 
-        <Window title={"Lights - Trace the red circle with your eyes."} 
+        <Window id="exercise-green" ref={this.secondRef} title={"Rectangle"} 
           onClose={this.toggleDialog} 
           stage={this.state.windowStage} 
-          resizable={this.state.isResizable} 
-          minWidth={1024} 
-          minHeight={768} 
-          initialWidth={1024} 
-          initialHeight={768}>
-          <RenderCircle/>
+          resizable={this.state.isResizable} >
+          {ZimFrame}
         </Window>}
       </div>
     );
   }
 }
 
-export default Exercises;
+export default Green;
 
