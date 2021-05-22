@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from "@progress/kendo-react-buttons";
+import { FloatingActionButton} from "@progress/kendo-react-buttons";
 import { Window } from '@progress/kendo-react-dialogs';
 import RenderCircle from './RenderCircle';
 import "../styles/MainExercise.scss";
@@ -29,7 +29,23 @@ class Exercises extends Component {
   render() {
     return (
       <div className="main-exercise">
-        <Button primary={true} onClick={this.toggleDialog}>Follow the Light</Button>
+        <FloatingActionButton 
+          primary={true} 
+          onClick={this.toggleDialog}
+          align={{
+            horizontal: "center",
+            vertical: "middle",
+          }}
+          alignOffset={{
+            x: -195,
+          }}
+          shape={"circle"}
+          size={"large"}
+          text="R"
+          popupSettings={{animate: true, popupClass: ""}}
+          >
+            Follow the Light
+          </FloatingActionButton>
         {this.state.visible && 
         <Window title={"Lights - Trace the red circle with your eyes."} 
           onClose={this.toggleDialog} 

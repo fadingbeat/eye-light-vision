@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Button } from "@progress/kendo-react-buttons";
+import { FloatingActionButton } from "@progress/kendo-react-buttons";
 import { Window } from '@progress/kendo-react-dialogs';
 import "../styles/MainExercise.scss";
-import {ZimFrame} from '../components/zim/greenRender';
+import {ZimFrame} from './zim/greenRender';
 
 class Green extends Component {
   constructor(props) {
@@ -30,7 +30,19 @@ class Green extends Component {
   render() {
     return (
       <div className="second-exercise">
-        <Button primary={true} onClick={this.toggleDialog}>Exercise green</Button>
+        <FloatingActionButton 
+        primary={true} onClick={this.toggleDialog}
+        align={{
+            horizontal: "center",
+            vertical: "middle",
+          }}
+          alignOffset={{
+            x: 195,
+          }} shape={"circle"}
+          size={"large"}
+          text="G"
+          themeColor={'success'}
+          >Exercise green</FloatingActionButton>
         {this.state.visible && 
         <Window id="exercise-green" ref={this.secondRef} title={"Rectangle"} 
           onClose={this.toggleDialog} 
