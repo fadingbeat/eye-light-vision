@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button } from "@progress/kendo-react-buttons";
 import { Window } from "@progress/kendo-react-dialogs";
 import ExerciseCircle from "./ExerciseCircle";
-import Green from './rect';
+import Green from './ExerciseGreen';
 
 class WindowExercises extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class WindowExercises extends Component {
       <div className="list-exercises">
         <Button primary={true} onClick={this.toggleDialog}>Exercises</Button>
         {this.state.visible &&
-          <Window title={"List of exercises"}
+          <Window
           onClose={this.toggleDialog}
           stage={this.state.windowStage} 
           resizable={this.state.isResizable}>
