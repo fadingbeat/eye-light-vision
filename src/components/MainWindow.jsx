@@ -16,6 +16,16 @@ class MainWindow extends Component {
     };
   }
 
+  componentDidMount = () => {
+    window.addEventListener('load', this.handleLoad);
+  }
+
+  handleLoad = () => {
+    let fragment = document.createDocumentFragment();
+    fragment.appendChild(document.getElementById('btn_middle'));
+    document.getElementById('btn_list').prepend(fragment);
+  }
+
   toggleDialog = () => {
     this.setState({
       visible: !this.state.visible,
@@ -31,9 +41,7 @@ class MainWindow extends Component {
             stage={this.state.windowStage} 
             resizable={this.state.isResizable} >
             <img src={cover} alt="Illustration of an eye lifting weights"/>
-            <div className="btn-wrapper">
-              <Button primary={true}>Exercises</Button>
-              <Button primary={true}>Facts</Button>
+            <div id="btn_list" className="btn-wrapper">
               <Button primary={true}>Settings</Button>
               <Button primary={true}>Help</Button>
             </div>

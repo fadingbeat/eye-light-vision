@@ -22,7 +22,8 @@ class WindowExercises extends Component {
   render() {
     return (
       <div className="list-exercises">
-        <Button primary={true} onClick={this.toggleDialog}>Exercises</Button>
+        <Button primary={true} id="btn_middle" 
+         onClick={this.toggleDialog}>Exercises</Button>
         {this.state.visible &&
           <Window
           onClose={this.toggleDialog}

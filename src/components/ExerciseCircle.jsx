@@ -42,7 +42,6 @@ class Exercises extends Component {
           shape={"circle"}
           size={"large"}
           text="R"
-          popupSettings={{animate: true, popupClass: ""}}
           >
             Follow the Light
           </FloatingActionButton>
