@@ -11,7 +11,6 @@ class Green extends Component {
         isResizable: false,
         windowStage: "FULLSCREEN"
     };
-   
   }
 
   toggleDialog = () => {
@@ -30,18 +29,19 @@ class Green extends Component {
     return (
       <div id="exercise-green" className="second-exercise">
         <FloatingActionButton 
-        primary={true} onClick={this.toggleDialog}
+        primary={true} 
+        onClick={this.toggleDialog}
         align={{
             horizontal: "center",
             vertical: "middle",
           }}
-          alignOffset={{
-            y: -195,
-            x: 195,
-          }} shape={"circle"}
-          size={"large"}
-          text="G"
-          themeColor={'success'}
+        alignOffset={{
+          y: -195,
+          x: 195,
+        }} shape={"circle"}
+        size={"large"}
+        text="G"
+        themeColor={'success'}
           ></FloatingActionButton>
         {this.state.visible && 
         <Window

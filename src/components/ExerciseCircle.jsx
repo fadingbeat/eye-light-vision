@@ -42,11 +42,10 @@ class Exercises extends Component {
           shape={"circle"}
           size={"large"}
           text="R"
-          >
-            Follow the Light
-          </FloatingActionButton>
+          ></FloatingActionButton>
+
         {this.state.visible && 
-        <Window title={"Trace the red circle with your eyes."} 
+        <Window title={"Trace the red circle"} 
           onClose={this.toggleDialog} 
           stage={this.state.windowStage} 
           resizable={this.state.isResizable} 

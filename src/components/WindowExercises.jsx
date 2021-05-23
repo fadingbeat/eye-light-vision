@@ -27,9 +27,9 @@ class WindowExercises extends Component {
          onClick={this.toggleDialog}>Exercises</Button>
         {this.state.visible &&
           <Window
-          onClose={this.toggleDialog}
-          stage={this.state.windowStage} 
-          resizable={this.state.isResizable}>
+            onClose={this.toggleDialog}
+            stage={this.state.windowStage} 
+            resizable={this.state.isResizable}>
           <ExerciseCircle />
           <Green/>
           <Blue/>
