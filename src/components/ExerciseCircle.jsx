@@ -30,31 +30,27 @@ class Exercises extends Component {
     return (
       <div className="main-exercise">
         <FloatingActionButton 
-          primary={true} 
           onClick={this.toggleDialog}
           align={{
             horizontal: "center",
             vertical: "middle",
           }}
           alignOffset={{
+            y: -195,
             x: -195,
           }}
           shape={"circle"}
           size={"large"}
           text="R"
-          popupSettings={{animate: true, popupClass: ""}}
           >
             Follow the Light
           </FloatingActionButton>
         {this.state.visible && 
-        <Window title={"Lights - Trace the red circle with your eyes."} 
+        <Window title={"Trace the red circle with your eyes."} 
           onClose={this.toggleDialog} 
           stage={this.state.windowStage} 
           resizable={this.state.isResizable} 
-          minWidth={1024} 
-          minHeight={768} 
-          initialWidth={1024} 
-          initialHeight={768}>
+        >
           <RenderCircle/>
         </Window>}
       </div>

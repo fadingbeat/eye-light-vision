@@ -9,7 +9,35 @@
 }
 
 .list-exercises {
-  .k-window-titlebar.k-dialog-titlebar {
-    // display: none;
+  button {
+    span {
+      font-size: 40px;
+      opacity: 0.6;
+    }
   }
+}
+
+#btn_r {
+  background-color: red;
+  color: #fff;
+}
+
+#btn_g {
+  background-color: green;
+  color: #fff;
+}
+
+#btn_b {
+  background-color: blue;
+  color: #fff;
+}
+
+/*Exercise green 
+  dialog title bar background color
+*/
+#exercise-green .k-window-titlebar.k-dialog-titlebar {
+  background-color: #37b400;
+}
+#exercise-blue .k-window-titlebar.k-dialog-titlebar {
+  background-color: #0058e9;
 }
