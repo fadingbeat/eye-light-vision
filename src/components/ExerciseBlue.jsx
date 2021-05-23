@@ -29,18 +29,21 @@ class Blue extends Component {
     return (
       <div id="exercise-blue" className="third-exercise">
         <FloatingActionButton 
-        primary={true} onClick={this.toggleDialog}
+        primary={true} 
+        onClick={this.toggleDialog}
         align={{
             horizontal: "center",
             vertical: "middle",
           }}
-          alignOffset={{
+        alignOffset={{
             y: 195,
-          }} shape={"square"}
-          size={"large"}
-          text="B"
-          themeColor={'info'}
-          ></FloatingActionButton>
+          }}
+        shape={"square"}
+        size={"large"}
+        text="B"
+        themeColor={'info'}
+        ></FloatingActionButton>
+        
         {this.state.visible && 
         <Window
           onClose={this.toggleDialog} 

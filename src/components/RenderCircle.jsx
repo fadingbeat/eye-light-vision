@@ -71,24 +71,21 @@ class RenderCircle extends React.Component {
     }
 
     render() {
-        const { show, direction } = this.state;
-        const children = show ? (<div id="surface" ref={this.surfaceRef}/>) : null;
-        return (
-          <div>
-            {/* <dt>
-              Slide: {direction}
-            </dt> */}
-            <dt>
-              <Button id="btn_r" onClick={this.onClickRed}>R</Button>
-              <Button id="btn_g" onClick={this.onClickGreen}>G</Button>
-              <Button id="btn_b" onClick={this.onClickBlue}>B</Button>
-            </dt>
-            <Slide  direction={direction} transitionEnterDuration={17000}
-              transitionExitDuration={20000}>
-              {children}
-            </Slide>
-          </div>
-        );
+      const { show, direction } = this.state;
+      const children = show ? (<div id="surface" ref={this.surfaceRef}/>) : null;
+      return (
+        <div>
+          <dt>
+            <Button id="btn_r" onClick={this.onClickRed}>R</Button>
+            <Button id="btn_g" onClick={this.onClickGreen}>G</Button>
+            <Button id="btn_b" onClick={this.onClickBlue}>B</Button>
+          </dt>
+          <Slide  direction={direction} transitionEnterDuration={17000}
+            transitionExitDuration={20000}>
+            {children}
+          </Slide>
+        </div>
+      );
     }
 }
 
