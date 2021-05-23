@@ -36,7 +36,7 @@ class MainWindow extends Component {
     return (
       <div className="main-container">
         {this.state.visible && 
-          <Window 
+          <Window
             title="Eye treatment with color therapy" 
             stage={this.state.windowStage} 
             resizable={this.state.isResizable} >

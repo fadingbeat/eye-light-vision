@@ -3,6 +3,7 @@ import { Surface } from '@progress/kendo-drawing';
 
 import {  Slide } from '@progress/kendo-react-animation';
 import drawCircle from './draw-circle';
+import { Button } from '@progress/kendo-react-buttons';
 
 class RenderCircle extends React.Component {
     constructor(props) {
@@ -18,10 +19,16 @@ class RenderCircle extends React.Component {
         show: !this.state.show,
       });
       this.onTimeout();
+      window.addEventListener('load', this.handleIcon());
     }
   
     componentDidUpdate() {
       drawCircle(this.createSurface());
+    }
+
+    handleIcon = () => {
+      let icon = document.getElementsByClassName("k-icon k-i-close");
+      icon[2].className = "k-icon k-i-undo";
     }
 
     createSurface = () => {
@@ -50,10 +57,17 @@ class RenderCircle extends React.Component {
       }, 15000);
     }
 
-    onClick = () => {
-      this.setState({
-        show: !this.state.show,
-      });
+    onClickRed = () => {
+      document.querySelector("#surface circle").setAttribute("stroke", "red");
+      document.querySelector("#surface circle").setAttribute("fill", "red");
+    }
+    onClickBlue = () => {
+      document.querySelector("#surface circle").setAttribute("stroke", "blue");
+      document.querySelector("#surface circle").setAttribute("fill", "blue");
+    }
+    onClickGreen = () => {
+      document.querySelector("#surface circle").setAttribute("stroke", "green");
+      document.querySelector("#surface circle").setAttribute("fill", "green");
     }
 
     render() {
@@ -65,9 +79,9 @@ class RenderCircle extends React.Component {
               Slide: {direction}
             </dt> */}
             <dt>
-              <button 
-                onClick={this.onClick}>Animate
-              </button>
+              <Button id="btn_r" onClick={this.onClickRed}>R</Button>
+              <Button id="btn_g" onClick={this.onClickGreen}>G</Button>
+              <Button id="btn_b" onClick={this.onClickBlue}>B</Button>
             </dt>
             <Slide  direction={direction} transitionEnterDuration={17000}
               transitionExitDuration={20000}>

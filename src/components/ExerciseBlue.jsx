@@ -3,7 +3,7 @@ import { FloatingActionButton } from "@progress/kendo-react-buttons";
 import { Window } from '@progress/kendo-react-dialogs';
 import "../styles/MainExercise.scss";
 
-class Green extends Component {
+class Blue extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +11,6 @@ class Green extends Component {
         isResizable: false,
         windowStage: "FULLSCREEN"
     };
-   
   }
 
   toggleDialog = () => {
@@ -28,7 +27,7 @@ class Green extends Component {
 
   render() {
     return (
-      <div id="exercise-green" className="second-exercise">
+      <div id="exercise-blue" className="third-exercise">
         <FloatingActionButton 
         primary={true} onClick={this.toggleDialog}
         align={{
@@ -36,12 +35,11 @@ class Green extends Component {
             vertical: "middle",
           }}
           alignOffset={{
-            y: -195,
-            x: 195,
-          }} shape={"circle"}
+            y: 195,
+          }} shape={"square"}
           size={"large"}
-          text="G"
-          themeColor={'success'}
+          text="B"
+          themeColor={'info'}
           ></FloatingActionButton>
         {this.state.visible && 
         <Window
@@ -55,5 +53,5 @@ class Green extends Component {
   }
 }
 
-export default Green;
+export default Blue;
 

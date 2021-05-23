@@ -8,10 +8,10 @@
     max-width: 100%;
   }
   .btn-wrapper {
-    margin: 20px 13%;
+    margin: 20px 14.2%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     button {
       width: 100px;
       height: 50px;
@@ -19,6 +19,7 @@
   }
   .k-widget.k-window {
     .k-content.k-window-content {
+      overflow: hidden;
       div {
         .k-animation-container.k-animation-container-relative {
           width: 100% !important;
@@ -52,3 +53,37 @@
   :only-child {
   display: none;
 }
+
+.main-container
+  > .k-widget.k-window
+  > .k-window-titlebar.k-dialog-titlebar
+  > .k-window-title {
+  display: initial;
+  text-align: center;
+}
+
+.list-exercises
+  > .k-widget.k-window
+  > .k-window-titlebar.k-dialog-titlebar
+  > .k-window-actions {
+  display: none;
+}
+
+.list-exercises > .k-widget.k-window > .k-window-titlebar.k-dialog-titlebar {
+  background: unset;
+  border-bottom: unset;
+}
+
+.list-exercises
+  > .k-widget.k-window
+  > .k-window-titlebar.k-dialog-titlebar
+  button {
+  color: #ff6358;
+}
+
+.k-icon.k-i-window-restore {
+  display: none;
+}
+// .main-container > .k-widget.k-window > .k-window-titlebar.k-dialog-titlebar {
+//   display: none;
+// }

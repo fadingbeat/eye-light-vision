@@ -3,6 +3,7 @@ import { Button } from "@progress/kendo-react-buttons";
 import { Window } from "@progress/kendo-react-dialogs";
 import ExerciseCircle from "./ExerciseCircle";
 import Green from './ExerciseGreen';
+import Blue from './ExerciseBlue';
 
 class WindowExercises extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class WindowExercises extends Component {
           resizable={this.state.isResizable}>
           <ExerciseCircle />
           <Green/>
+          <Blue/>
           </Window>
         }
       </div>
